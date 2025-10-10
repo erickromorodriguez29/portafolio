@@ -1,0 +1,43 @@
+body {
+    background-color: #cf7f16;
+    color: #212529;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.btn {
+    background-color: #007bff;
+    font-family:fantasy;
+    color:aliceblue
+}
+.btn-group .btn {
+    margin-right: 5px;
+    background-color: #a72881;
+    color: white;
+}
+.card {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #85b434;
+    margin-top: 20px;
+}
+body{
+    background-image: (src="https://media.gettyimages.com/id/1786906095/es/foto/fort-lauderdale-florida-lionel-messi-of-inter-miami-cf-hoist-his-trophy-during-the-ballon-dor.jpg?s=612x612&w=0&k=20&c=jYlDEWiH4VOhSBOr7qm3eZfghiZNlIsp40TiPDYgkhA=)
+}
+/*medias queries ===
+nos permiten aplicar estilos de css solo cuando se cumplen siertas condiciones del dispositivo o de la pantalla y sea el ancho o la resolucion para invocarla */
+@media (max-width: 768px){
+    body{
+        background-color: #007bff;
+    }
+}
+/*?¿Cuándo utilizarlas?*/
+/*Diseño responsivo personalizado:
+Ajustar fuentes, márgenes o layout en tamaños de pantalla específicos.
+Ejemplo: Cambiar el tamaño del menú en pantallas de móvil.
+Cuando un framework (como Bootstrap) no cubre tu necesidad:
+Si usas Bootstrap, normalmente ya incluye media queries en sus clases (col-md, d-sm-none, etc.).
+Solo agrega tus propias media queries cuando necesitas un estilo único que el framework no ofrece.
+Optimización para dispositivos concretos:
+Orientación de pantalla (portrait/landscape).
+Alta densidad de píxeles (pantallas Retina). */
