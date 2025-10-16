@@ -1,36 +1,136 @@
-body {
+html,body {
+  background-color: #000;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0d0d2b;
-  color: #fff;
+  background: #27279a;
+  color: #2128ac;
   text-align: center;
+}
+.navbar {
+  background-color: #3535bd; /* tu color personalizado */
+}
+.navbar .nav-link {
+  color: #0538ed; /* color de los links */
+}
+
+.navbar .nav-link:hover {
+  color: #ff8c42; /* color al pasar el mouse */
+}
+.hero {
+    position: relative;
+  width: 100%;       /* ocupa todo el ancho */
+  height: 70vh;      /* altura del header, ajusta a tu gusto */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* Capa de texto encima */
+.texto-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;/* asegura que quede por encima */
+   color: #ffffff; 
+}
+
+/* Capa semitransparente para mejorar contraste */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+ /* oscurece la imagen */
+  z-index: 1; /* debajo del texto */
+  background: rgba(0, 0, 0, 0.4); /* capa oscura sobre la imagen */
+   inset: 0; /* top:0; right:0; bottom:0; left:0 */
+}
+
+.texto-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  
+}
+
+.texto-hero p {
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 .hero {
+  text-align: center;
   padding: 40px 20px;
 }
 
 .portada {
-  max-width: 30%;
-  height: auto;
-  border-radius: 12px;
+   position: absolute;   /* se posiciona dentro del contenedor */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;        /* ocupa todo el contenedor hero */
+  object-fit: cover;   /* llena todo sin deformar */
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  z-index: 0;          /* detrás del texto */
+  transition: transform 0.3s ease;
+  
+}
+.portada:hover{
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }
 
 .perfil {
-  margin: 40px auto;
-  padding: 20px;
+  text-align: center;
+  margin: 0px auto;
+  padding: 0;
+   background: #27279a;
 }
 
 .perfil-img {
+  text-align: center;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-bottom: 15px;
   border: 3px solid #ff8c42;
 }
+/* skills list */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;            /* activa flexbox */
+  flex-direction: column;   /* organiza los items en columna */
+  align-items: center;      /* centra horizontalmente */
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;  /* alinea palomita y texto */
+  margin-bottom: 8px;
+
+  align-items: center;
+      
+}
+
+.skills-list li::before {
+  content: "✔";         /* palomita */
+  color: #4CAF50;           /* verde */
+  margin-right: 10px;       /* espacio entre palomita y texto */
+  font-size: 1.5rem;
+}
 
 .proyectos {
   margin-top: 40px;
+  text-align: center;
 }
 
 .proyecto-card {
@@ -60,12 +160,40 @@ body {
 }
 
 .btn-proyecto:hover {
-  background: #1e88e5;
+  background: #2f8fe2;
 }
 
-.contacto a {
-  color: #42a5f5;
+
+
+.contacto {
+  text-align: center;
+  margin: 40px 0;
+  background: #27279a;
+  padding: 30px 0;
+  border-radius: 10px;
+}
+
+.contacto h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.iconos {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* espacio entre iconos */
+}
+
+.iconos a {
+  color: #42a5f5; /* azul claro */
   text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.iconos a:hover {
+  color: #00bcd4; /* color más brillante al pasar el mouse */
+  transform: scale(1.2);
 }
 
 footer {
