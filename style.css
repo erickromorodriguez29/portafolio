@@ -5,6 +5,8 @@ html,body {
   background: #27279a;
   color: #2128ac;
   text-align: center;
+  padding: 0;
+  overflow-x: hidden; /* opcional, evita scroll horizontal */
 }
 .navbar {
   background-color: #3535bd; /* tu color personalizado */
@@ -19,7 +21,7 @@ html,body {
 .hero {
     position: relative;
   width: 100%;       /* ocupa todo el ancho */
-  height: 70vh;      /* altura del header, ajusta a tu gusto */
+  height: 65vh;      /* altura del header, ajusta a tu gusto */
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -34,7 +36,7 @@ html,body {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;/* asegura que quede por encima */
-   color: #ffffff; 
+   color: #0743f7; 
 }
 
 /* Capa semitransparente para mejorar contraste */
@@ -43,10 +45,9 @@ html,body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
- /* oscurece la imagen */
+  background: rgba(0,0,0,0.2); /* capa oscura suave */
   z-index: 1; /* debajo del texto */
-  background: rgba(0, 0, 0, 0.4); /* capa oscura sobre la imagen */
-   inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
 }
 
 .texto-hero h1 {
@@ -62,37 +63,36 @@ html,body {
 }
 
 .hero {
-  text-align: center;
-  padding: 40px 20px;
+   margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 65vh; /* que ocupe toda la ventana */
+  overflow: hidden;
 }
 
 .portada {
-   position: absolute;   /* se posiciona dentro del contenedor */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;        /* ocupa todo el contenedor hero */
-  object-fit: cover;   /* llena todo sin deformar */
-  object-position: center;
-  display: block;
-  margin: 0;
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  z-index: 0;          /* detrás del texto */
-  transition: transform 0.3s ease;
-  
+  width: 100vw;               /* Ocupa todo el ancho de la ventana */
+  height: 100vh;              /* Ocupa toda la altura de la ventana */
+  object-fit: cover;          /* Rellena el contenedor sin deformar */
+  border-radius: 0;           /* Sin esquinas redondeadas */
+  box-shadow: none;           /* Opcional: quita sombras si quieres */
+  transition: transform 0.3s, filter 0.3s;
+  filter: brightness(1);      /* Luminosidad normal */
 }
-.portada:hover{
-  transform: scale(1.05);
-  transition: transform 0.3s;
+
+.portada:hover {
+  transform: scale(1.05);     /* Efecto zoom al pasar el mouse */
+  filter: brightness(1.2);    /* Más brillante al pasar el mouse */
 }
 
 .perfil {
+ .perfil {
   text-align: center;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 0;
-   background: #27279a;
+  background: transparent; /* ✅ en lugar del azul que apaga la imagen */
+}
 }
 
 .perfil-img {
@@ -102,6 +102,7 @@ html,body {
   border-radius: 50%;
   margin-bottom: 15px;
   border: 3px solid #ff8c42;
+  margin-top: 5px;
 }
 /* skills list */
 .skills-list {
@@ -123,9 +124,11 @@ html,body {
 
 .skills-list li::before {
   content: "✔";         /* palomita */
-  color: #4CAF50;           /* verde */
+  color: #16da1d;           /* verde */
   margin-right: 10px;       /* espacio entre palomita y texto */
   font-size: 1.5rem;
+  align-items: center; 
+  grid-template-columns: 30px auto;
 }
 
 .proyectos {
