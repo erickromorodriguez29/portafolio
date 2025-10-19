@@ -1,63 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portafolio - Erick Romo</title>
+
+  <!-- Bootstrap CSS (en HEAD) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Tu CSS (último para que pueda sobrescribir Bootstrap si hace falta) -->
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-  <!-- navbar -->
-       <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-text">Erick Romo</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Principal</a>
+          <a class="nav-link" href="#">Sobre mi</a>
+          <a class="nav-link" href="#">Mis proyectos</a>
+          <a class="nav-link" href="#">Contacto</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-      </div>
-     
-      
-    </div>
-  </div>
-</div>
-  <header class="hero">
-    <img src="imagenes/nuevaportada2.png" alt="Imagen de portada" class="portada">
+  </nav>
+
+  <!-- Añadí padding-top para que el contenido no quede oculto detrás del fixed-top -->
+  <header class="hero" style="padding-top: 80px;">
+    <img src="imagenes/espacio.jpg"  alt="Imagen de portada" class="portada">
     <div class="texto-hero">
-        <img src="fotodeperfil.png" alt="Foto de perfil" class="perfil-img">
-    <h1>¡Hola! Soy Erick Romo</h1>
-    <p>Desarrollador en formación | Apasionado por la tecnología</p>
-  </div>
-    
+      <img src="fotodeperfil.png" alt="Foto de perfil" class="perfil-img">
+      <h1>¡Hola! Soy Erick Romo</h1>
+      <p>Desarrollador en formación | Apasionado por la tecnología</p>
+    </div>
   </header>
 
   <section class="perfil">
-    
     <h2>Sobre mí</h2>
-   
-    <p>soy licenciado en Administracion de empresas he  ingenieria en sistemas computacionales, soy una persona que le gustan los negocios relacionarme con las personas y formar equipos de trabajo, me gusta estar en constante aprendizage fue por eso que me intereso el area del desarollo web.
+    <p>soy licenciado en Administracion de empresas he ingenieria en sistemas computacionales... </p>
 
-    </p>
     <h3>Habilidades</h3>
-<h3>Habilidades</h3>
-<ul class="skills-list">
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>Bootstrap</li>
-  <li>Git / GitHub</li>
-</ul>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Bootstrap</li>
+      <li>Git / GitHub</li>
+    </ul>
   </section>
+
+  <!-- SECCIÓN carousel -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+  <!-- SECCIÓN proyectos -->
 
   <section class="proyectos">
     <h2>Proyectos</h2>
@@ -67,22 +104,24 @@
       <a href="https://erickromorodriguez29.github.io/H-B-Spa-e-Commerce-11/" target="_blank" class="btn-proyecto">Spa</a>
       <a href="https://erickromorodriguez29.github.io/LAB-BLOG-SPORTS-UPDATE-Erick/" target="_blank" class="btn-proyecto">blog the deportes</a>
       <a href="https://erickromorodriguez29.github.io/Hackathon-ch59-erick/" target="_blank" class="btn-proyecto">tienda de articulos de box</a>
-      
     </div>
   </section>
 
- <section class="contacto">
-  <h2>Contacto</h2>
-  <div class="iconos">
-    <a href="mailto:erik.romo.rodriguez29@gmail.com"><i class="bi bi-envelope fs-2"></i></a>
-    <a href="https://www.linkedin.com/in/erick-alberto-romo-rodriguez" target="_blank"><i class="bi bi-linkedin fs-2"></i></a>
-    <a href="https://github.com/erickromorodriguez29" target="_blank"><i class="bi bi-github fs-2"></i></a>
-  </div>
-</section>
+  <section class="contacto">
+    <h2>Contacto</h2>
+    <div class="iconos">
+      <a href="mailto:erik.romo.rodriguez29@gmail.com"><i class="bi bi-envelope fs-2"></i></a>
+      <a href="https://www.linkedin.com/in/erick-alberto-romo-rodriguez" target="_blank"><i class="bi bi-linkedin fs-2"></i></a>
+      <a href="https://github.com/erickromorodriguez29" target="_blank"><i class="bi bi-github fs-2"></i></a>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 Erick Romo - Portafolio</p>
   </footer>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- -------- SCRIPTS: primero Bootstrap JS, luego tu script -------- -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="portafolio.js"></script>
 </body>
 </html>

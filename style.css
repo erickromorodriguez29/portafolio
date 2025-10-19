@@ -2,7 +2,7 @@ html,body {
   background-color: #000;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #27279a;
+  background: #254ccd65;
   color: #2128ac;
   text-align: center;
   padding: 0;
@@ -18,118 +18,151 @@ html,body {
 .navbar .nav-link:hover {
   color: #ff8c42; /* color al pasar el mouse */
 }
+.navbar-scrolled {
+  box-shadow: 0 2px 20px rgba(255, 68, 68, 0.3);
+  background-color: white !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-brand {
+  color: #333 !important;
+}
+/* Estilo normal de los links de navbar */
+.navbar .nav-link {
+  color: #333;              /* color normal */
+  transition: color 0.3s;   /* transición suave */
+}
+.navbar-brand {
+  color: #0538ed; /* color del brand */
+  font-weight: bold;
+}
+
+/* ===================== HERO ===================== */
 .hero {
-    position: relative;
-  width: 100%;       /* ocupa todo el ancho */
-  height: 65vh;      /* altura del header, ajusta a tu gusto */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  position: relative;       /* Contenedor relativo para posicionar hijos */
+  width: 100%;              /* Ocupa todo el ancho */
+  height: 65vh;             /* Altura del hero */
+  overflow: hidden;         /* Oculta desbordes de la imagen */
 }
 
-
-/* Capa de texto encima */
-.texto-hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;/* asegura que quede por encima */
-   color: #0743f7; 
-}
-
-/* Capa semitransparente para mejorar contraste */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.2); /* capa oscura suave */
-  z-index: 1; /* debajo del texto */
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
-}
-
-.texto-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #ffffff;
-  
-}
-
-.texto-hero p {
-  font-size: 1.2rem;
-  color: #ffffff;
-}
-
-.hero {
-   margin: 0;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  height: 65vh; /* que ocupe toda la ventana */
-  overflow: hidden;
-}
-
+/* Imagen de fondo del hero */
 .portada {
-  width: 100vw;               /* Ocupa todo el ancho de la ventana */
-  height: 100vh;              /* Ocupa toda la altura de la ventana */
-  object-fit: cover;          /* Rellena el contenedor sin deformar */
-  border-radius: 0;           /* Sin esquinas redondeadas */
-  box-shadow: none;           /* Opcional: quita sombras si quieres */
-  transition: transform 0.3s, filter 0.3s;
-  filter: brightness(1);      /* Luminosidad normal */
+  position: absolute;       /* Posicionamiento absoluto dentro de .hero */
+  top: 0;                   /* Pegada al top del hero */
+  left: 0;                  /* Pegada al lado izquierdo */
+  width: 100%;              /* Ocupa todo el ancho del hero */
+  height: 100%;             /* Ocupa toda la altura del hero */
+  object-fit: cover;        /* Ajusta la imagen sin deformarla */
+  object-position: top;     /* Parte superior visible */
+  z-index: 0;               /* Detrás del texto */
+  transition: transform 0.3s, filter 0.3s; /* Animación hover */
+  filter: brightness(1);    /* Brillo normal */
 }
 
 .portada:hover {
-  transform: scale(1.05);     /* Efecto zoom al pasar el mouse */
-  filter: brightness(1.2);    /* Más brillante al pasar el mouse */
+  transform: scale(1.05);   /* Zoom al pasar el mouse */
+  filter: brightness(1.2);  /* Más brillante al pasar el mouse */
 }
 
-.perfil {
- .perfil {
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  background: transparent; /* ✅ en lugar del azul que apaga la imagen */
+/* Capa semitransparente encima de la imagen para contraste */
+.hero::after {
+  content: "";              /* Necesario para pseudo-elemento */
+  position: absolute;       
+  inset: 0;                 /* top, right, bottom, left = 0 */
+  background: rgba(0, 0, 0, 0.3); /* Fondo oscuro suave */
+  z-index: 1;               /* Debajo del texto */
 }
+
+/* ===================== TEXTO DEL HERO ===================== */
+.texto-hero {
+  position: absolute;       /* Posiciona centrado dentro del hero */
+  top: 50%;                 
+  left: 50%;                
+  transform: translate(-50%, -50%); /* Centrado perfecto */
+  text-align: center;       
+  z-index: 2;               /* Encima de la imagen y capa */
+  color: #ffffff;           /* Color del texto */
+  padding: 0 20px;          /* Espacio lateral para móviles */
+}
+
+.texto-hero h1 {
+  font-size: 2.5rem;       /* Tamaño del título */
+  margin-bottom: 10px;     
+}
+
+.texto-hero p {
+  font-size: 1.2rem;       /* Tamaño del subtítulo */
+}
+
+/* ===================== PERFIL ===================== */
+.perfil {
+  text-align: center;       /* Centrado horizontal */
+  margin: 20px auto 0;      /* Separación superior y centrado */
+  background: transparent;  /* Sin fondo */
 }
 
 .perfil-img {
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 3px solid #ff8c42;
-  margin-top: 5px;
+  width: 150px;             /* Ancho del perfil */
+  height: 150px;            /* Alto del perfil */
+  border-radius: 50%;       /* Circular */
+  border: 3px solid #ff8c42; /* Borde decorativo */
+  margin: 0 auto 15px;      /* Centrado y separación inferior */
+  display: block;           
 }
-/* skills list */
+
+/* ===================== SKILLS ===================== */
 .skills-list {
-  list-style: none;
-  padding: 0;
-  display: flex;            /* activa flexbox */
-  flex-direction: column;   /* organiza los items en columna */
-  align-items: center;      /* centra horizontalmente */
+  list-style: none;         /* Quita viñetas */
+  padding: 0;               
+  display: flex;            
+  flex-direction: column;   /* Vertical */
+  align-items: center;      /* Centrado horizontal */
 }
 
 .skills-list li {
-  display: flex;
-  align-items: center;  /* alinea palomita y texto */
-  margin-bottom: 8px;
-
-  align-items: center;
-      
+  display: flex;            
+  align-items: center;      /* Alinea palomita y texto */
+  margin-bottom: 8px;       
 }
 
 .skills-list li::before {
-  content: "✔";         /* palomita */
-  color: #16da1d;           /* verde */
-  margin-right: 10px;       /* espacio entre palomita y texto */
-  font-size: 1.5rem;
-  align-items: center; 
-  grid-template-columns: 30px auto;
+  content: "✔";             /* Palomita */
+  color: #16da1d;           /* Color verde */
+  margin-right: 10px;       /* Espacio entre palomita y texto */
+  font-size: 1.2rem;        
 }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .texto-hero h1 {
+    font-size: 2rem;        /* Título más pequeño en tablet */
+  }
+  .texto-hero p {
+    font-size: 1rem;        /* Subtítulo más pequeño en tablet */
+  }
+  .perfil-img {
+    width: 120px;           
+    height: 120px;          
+  }
+}
+
+@media (max-width: 480px) {
+  .texto-hero h1 {
+    font-size: 1.5rem;      /* Título más pequeño en móvil */
+  }
+  .texto-hero p {
+    font-size: 0.9rem;      /* Subtítulo más pequeño en móvil */
+  }
+  .perfil-img {
+    width: 100px;           
+    height: 100px;          
+  }
+}
+
+
+
+
 
 .proyectos {
   margin-top: 40px;
