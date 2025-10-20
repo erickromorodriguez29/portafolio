@@ -7,6 +7,7 @@ html,body {
   text-align: center;
   padding: 0;
   overflow-x: hidden; /* opcional, evita scroll horizontal */
+  scroll-behavior: smooth;
 }
 .navbar {
   background-color: #3535bd; /* tu color personalizado */
@@ -42,37 +43,29 @@ html,body {
 .hero {
   position: relative;       /* Contenedor relativo para posicionar hijos */
   width: 100%;              /* Ocupa todo el ancho */
-  height: 65vh;             /* Altura del hero */
+  height: 100vh;             /* Altura del hero */
   overflow: hidden;         /* Oculta desbordes de la imagen */
+  margin-top: 0; /* por si acaso había espacio */
+  padding-top: 0;     /* elimina relleno interno */
 }
 
 /* Imagen de fondo del hero */
+
 .portada {
-  position: absolute;       /* Posicionamiento absoluto dentro de .hero */
-  top: 0;                   /* Pegada al top del hero */
-  left: 0;                  /* Pegada al lado izquierdo */
-  width: 100%;              /* Ocupa todo el ancho del hero */
-  height: 100%;             /* Ocupa toda la altura del hero */
-  object-fit: cover;        /* Ajusta la imagen sin deformarla */
-  object-position: top;     /* Parte superior visible */
-  z-index: 0;               /* Detrás del texto */
-  transition: transform 0.3s, filter 0.3s; /* Animación hover */
-  filter: brightness(1);    /* Brillo normal */
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1);
+  transition: transform 0.3s, filter 0.3s;
+  
 }
 
 .portada:hover {
-  transform: scale(1.05);   /* Zoom al pasar el mouse */
-  filter: brightness(1.2);  /* Más brillante al pasar el mouse */
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
-/* Capa semitransparente encima de la imagen para contraste */
-.hero::after {
-  content: "";              /* Necesario para pseudo-elemento */
-  position: absolute;       
-  inset: 0;                 /* top, right, bottom, left = 0 */
-  background: rgba(0, 0, 0, 0.3); /* Fondo oscuro suave */
-  z-index: 1;               /* Debajo del texto */
-}
+
 
 /* ===================== TEXTO DEL HERO ===================== */
 .texto-hero {
@@ -98,7 +91,7 @@ html,body {
 /* ===================== PERFIL ===================== */
 .perfil {
   text-align: center;       /* Centrado horizontal */
-  margin: 20px auto 0;      /* Separación superior y centrado */
+  margin:0;      /* Separación superior y centrado */
   background: transparent;  /* Sin fondo */
 }
 
@@ -110,7 +103,15 @@ html,body {
   margin: 0 auto 15px;      /* Centrado y separación inferior */
   display: block;           
 }
-
+/*================carucel ===========================*/
+#carouselExampleFade {
+  max-height: 60vh; /* cambia el número (vh = % de la pantalla) */
+  overflow: hidden;  /* oculta el exceso de las imágenes */
+}
+#carouselExampleFade img {
+  height: 60vh;        /* misma altura que el contenedor */
+  object-fit: cover;    /* recorta sin deformar */
+}
 /* ===================== SKILLS ===================== */
 .skills-list {
   list-style: none;         /* Quita viñetas */
