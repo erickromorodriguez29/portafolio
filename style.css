@@ -340,7 +340,7 @@ h4:hover::after {
   text-decoration: none;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, #42a5f5, #7e57c2);
+  background: linear-gradient(135deg, #42a5f5, #633fa1);
   box-shadow: 0 6px 20px rgba(66, 165, 245, 0.3);
   position: relative;
   overflow: hidden;
