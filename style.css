@@ -1,70 +1,81 @@
-html,body {
-  background-color: #000;
+/* ===================== RESET GENERAL ===================== */
+html,
+body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: #4dc3ed65;
   color: #2128ac;
   text-align: center;
-  padding: 0;
-  overflow-x: hidden; /* opcional, evita scroll horizontal */
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+/* ===================== NAVBAR ===================== */
+
+/* Navbar flotando encima del hero */
 .navbar {
-  background-color: #3535bd; /* tu color personalizado */
-}
-.navbar .nav-link {
-  color: #0538ed; /* color de los links */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* Texto del navbar sobre la imagen */
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Hover encima del hero */
 .navbar .nav-link:hover {
-  color: #ff8c42; /* color al pasar el mouse */
-}
-.navbar-scrolled {
-  box-shadow: 0 2px 20px rgba(255, 68, 68, 0.3);
-  background-color: white !important;
-  transition: all 0.3s ease;
+  color: #ff8c42 !important;
 }
 
+/* ===================== NAVBAR CON SCROLL ===================== */
+.navbar-scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Texto cuando baja */
 .navbar-scrolled .nav-link,
 .navbar-scrolled .navbar-brand {
-  color: #333 !important;
+  color: #333333 !important;
 }
-/* Estilo normal de los links de navbar */
-.navbar .nav-link {
-  color: #333;              /* color normal */
-  transition: color 0.3s;   /* transición suave */
-}
-.navbar-brand {
-  color: #0538ed; /* color del brand */
-  font-weight: bold;
+
+.navbar-scrolled .nav-link:hover {
+  color: #0538ed !important;
 }
 
 /* ===================== HERO ===================== */
 .hero {
-  position: relative;       /* Contenedor relativo para posicionar hijos */
-  width: 100%;              /* Ocupa todo el ancho */
-  height: 100vh;             /* Altura del hero */
-  overflow: hidden;         /* Oculta desbordes de la imagen */
-  margin-top: 0; /* por si acaso había espacio */
-  padding-top: 0;     /* elimina relleno interno */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-/* Imagen de fondo del hero */
-
+/* Imagen de portada */
 .portada {
   width: 100vw;
   height: 100%;
   object-fit: cover;
-  filter: brightness(1);
-  transition: transform 0.3s, filter 0.3s;
-  
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .portada:hover {
   transform: scale(1.05);
-  filter: brightness(1.2);
+  filter: brightness(1.15);
 }
-
 
 
 /* ===================== TEXTO DEL HERO ===================== */
@@ -107,6 +118,7 @@ html,body {
 #carouselExampleFade {
   max-height: 60vh; /* cambia el número (vh = % de la pantalla) */
   overflow: hidden;  /* oculta el exceso de las imágenes */
+  margin-bottom: 80px; 
 }
 #carouselExampleFade img {
   height: 60vh;        /* misma altura que el contenedor */
@@ -353,6 +365,152 @@ h4:hover::after {
   box-shadow: 0 12px 25px rgba(126, 87, 194, 0.5), 0 0 10px rgba(236, 64, 122, 0.4) inset;
 }
 
+
+/* ===================== CERTIFICACIONES ===================== */
+
+.certificaciones {
+  margin-top: 60px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* TÍTULO */
+.certificaciones h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #fff;
+  position: relative;
+}
+
+.certificaciones h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #42a5f5, #7e57c2, #ec407a);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(66, 165, 245, 0.5);
+}
+
+/* CARD PRINCIPAL */
+.certificaciones-card {
+  position: relative;
+  background: #0d1122; /* azul oscuro */
+  border-radius: 25px;
+  padding: 40px 30px;
+  margin: 30px auto;
+  max-width: 600px;
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(66, 165, 245, 0.2) inset;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+/* GLOW ANIMADO */
+.certificaciones-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #42a5f5,
+    #7e57c2,
+    #ec407a,
+    #42a5f5
+  );
+  animation: rotateGlow 12s linear infinite;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* HOVER CARD */
+.certificaciones-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 30px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(66, 165, 245, 0.4) inset;
+}
+
+/* TEXTO */
+.certificaciones-card h3,
+.certificaciones-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.certificaciones-card h3 {
+  color: #42a5f5;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.certificaciones-card p {
+  color: #cfd8dc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* ===================== */
+/* NUEVO: CONTENEDOR FLEX PARA LAS DOS IMÁGENES */
+/* ===================== */
+
+.certificaciones-flex {
+  display: flex;                 /* pone las imágenes en fila */
+  justify-content: center;
+  align-items: center;
+  gap: 25px;                     /* espacio entre certificado y carta */
+  flex-wrap: wrap;              /* en móvil se van abajo */
+  
+}
+
+/* CONTENEDOR DE CADA IMAGEN */
+.certificacion-contenedor {
+  display: flex;
+  justify-content: center;
+
+  width: 45%;                   /* NUEVO: para que quepan dos en la misma fila */
+}
+
+/* IMAGEN */
+.certificacion-img {
+  width: 100%;
+  max-width: 260px;             /* un poco más pequeño para que entren bien */
+  height: auto;
+  border-radius: 15px;
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(66, 165, 245, 0.2) inset;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER IMAGEN */
+.certificaciones-card:hover .certificacion-img {
+  transform: scale(1.05);
+}
+
+/* ANIMACIÓN */
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
 /* ===================== contacto ===================== */
 
 
@@ -392,3 +550,4 @@ footer {
   padding: 15px;
   background: #1a1a40;
 }
+
